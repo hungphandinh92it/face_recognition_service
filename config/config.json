@@ -1,0 +1,8 @@
+{
+  "DATA_DIR": "./data",
+  "DATA_DIR_TOTAL": "./data/total",
+  "DATA_DIR_NEGATIVE": "./data/negative",
+  "NUMBER_OF_JITTER": 10,
+  "DATA_MODEL": "./data/model",
+  "FACE_IMAGE_SIZE": 150
+}
