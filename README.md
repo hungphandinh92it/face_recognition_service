@@ -41,3 +41,34 @@ npm install
 npm start
 ```
 # API: <a href="https://www.getpostman.com/collections/ed70b5d12476794eaf0f"><b>Postman</b></a>
+## Tạo user và train : 
+####POST: /classifier/train
+####body: formdata : 
+key: id, value: userId
+key: files, value: file Ảnh của user 
+####response
+````json
+{
+    "success": true,
+    "data": [
+        {
+            "className": "userId",
+            "numFaces": 21
+        }
+    ]
+}
+````
+## Nhận diện : 
+####POST: predict/file
+####body: formdata : 
+key: files, value: Ảnh cần nhận diện
+####response: 
+````json
+{
+    "success": true,
+    "data": {
+        "className": "userId",
+        "distance": 0.15
+    }
+}
+````
