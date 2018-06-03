@@ -32,21 +32,21 @@ Simply install openblas (`sudo apt-get install libopenblas-dev`) before building
 
 Unfortunately on windows we have to compile [openblas](https://github.com/xianyi/OpenBLAS) manually (this will require you to have perl installed). Compiling openblas will leave you with `libopenblas.lib` and `libopenblas.dll`. In order to compile face-recognition.js with openblas support, provide an environment variable `OPENBLAS_LIB_DIR` with the path to `libopenblas.lib` and add the path to `libopenblas.dll` to your system path, before installing the package. In case you are using a manual build of dlib, you have to compile it with openblas as well.
 
-#Step 2 Install Modules: 
+# Step 2 Install Modules: 
 ``` bash
 npm install
 ```
-#Step 3 Run
+# Step 3 Run
 ``` bash
 npm start
 ```
 # API: <a href="https://www.getpostman.com/collections/ed70b5d12476794eaf0f"><b>Postman</b></a>
 ## Tạo user và train : 
-####POST: /classifier/train
-####body: formdata : 
+#### POST: /classifier/train
+#### body: formdata : 
 key: id, value: userId
 key: files, value: file Ảnh của user 
-####response
+#### response
 ````json
 {
     "success": true,
@@ -59,10 +59,10 @@ key: files, value: file Ảnh của user
 }
 ````
 ## Nhận diện : 
-####POST: predict/file
-####body: formdata : 
+#### POST: predict/file
+#### body: formdata : 
 key: files, value: Ảnh cần nhận diện
-####response: 
+#### response: 
 ````json
 {
     "success": true,
