@@ -2,6 +2,7 @@ const {fr} = require('./commons');
 const face_detector = require('./face_dectector');
 const path = require('path');
 const fs = require('fs');
+const fileUtils = require('./fileUtils');
 const DATA_DIR_TOTAL = require('../config/config').DATA_DIR_TOTAL;
 
 const extractImgs = (files, classifierId) => {
@@ -23,6 +24,7 @@ const extractImgs = (files, classifierId) => {
         for (let i = 0; i < files.length; i++) {
           let filePath = files[i].path;
           let image = fr.loadImage(filePath);
+          fileUtils.removeFile(filePath);
           if (image) {
             console.log('ImageLoaded');
           }

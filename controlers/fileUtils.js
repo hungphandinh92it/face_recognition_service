@@ -46,6 +46,14 @@ const getFileExtension = (filename) => {
   return ext === null ? '' : ext[1];
 };
 
+const removeFile = (filePath) => {
+  fs.unlinkSync(filePath, err => {
+    if (err) {
+      console.log(file, err);
+    }
+  });
+};
+
 
 function getFileName(path) {
   let fileName;
@@ -63,3 +71,4 @@ exports.getFileExtension = getFileExtension;
 exports.prepareTempFolder = prepareTempFolder;
 exports.getFileName = getFileName;
 exports.checkTempFolder = checkTempFolder;
+exports.removeFile = removeFile;

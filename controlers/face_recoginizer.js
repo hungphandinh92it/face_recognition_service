@@ -36,15 +36,13 @@ exports.loadModel = loadModel;
 
 const predictImageFile = (req, res) => {
   new Promise((resolve, reject) => {
-    // loadModel();
-    // console.log(JSON.stringify(req.body, null, 2));
     console.log("Predicting");
     try {
       let files = req.files.files;
       let file = files.path;
       console.log('Loading Image:', file);
       let image = fr.loadImage(file);
-
+      fileUtils.removeFile(file);
       // resize image if too large
       const maxPxSize = 640;
       if ((image.rows) > maxPxSize) {
@@ -122,6 +120,7 @@ const predictImageAndShow = (req, res) => {
       let file = files.path;
       console.log('Loading Image:', file);
       let image = fr.loadImage(file);
+      fileUtils.removeFile(file);
       // resize image if too small
       const minPxSize = 640;
       if ((image.rows) > minPxSize) {
