@@ -7,6 +7,7 @@ const responseAction = require('./responseAction');
 const config = require('../config/config');
 const shell = require('shelljs');
 const face_detector = require('./face_dectector');
+const fileUtils = require('./fileUtils');
 require('./logUtils');
 
 const {
